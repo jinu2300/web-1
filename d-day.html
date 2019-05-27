@@ -3,6 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<script>
+		function getToday() {
+			var week = new Array ('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+			var today = new Date().getDay();
+			var todayko = week[today];
+
+			return todayko;
+		}
+	</script>
 </head>
 <body>
 	<center>
@@ -11,6 +20,13 @@
 	<script>
 		var Dday = new Date(2019, 10, 5);    
 		var now = new Date();
+		var year = now.getFullYear();
+		var month = now.getMonth();
+		var day = now.getDate();
+		var hour = now.getHours();
+		var min = now.getMinutes();
+		
+
  
 		var gap = now.getTime() - Dday.getTime();    
 		var result = Math.floor(gap / (1000 * 60 * 60 * 24)) * -1;    
@@ -18,7 +34,8 @@
 		document.write("<h1>제 54회 전국기능경기대회는  <font color=red>" + result + "</font> 일 남았습니다.</h1>");
 		document.write("<h1>전규리의 메달을 기원합니다.</h1>"); 
 		document.write("<h1>조일고 웹디자인 및 개발 기능반 일동.</h1>"); 
-		document.write("<h2>오늘은 " + now + "입니다.<br><br><br><>") ;
+		document.write("<h2>오늘은 <u>" + year + "년 " + month +"월 " + day + "일  "+ getToday() + "!!!</u>   현재시간은 " + hour + "시 " + min +"분 " + "입니다.<br><br><br>") ;
+
 		document.write("<h3>이 페이지는 5초후에 새로고침됩니다.</h3>");
 		document.write("</center>");
 
